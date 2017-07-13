@@ -1,0 +1,57 @@
+<%= form_with(model: issue, local: true) do |form| %>
+  <% if issue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+      <ul>
+      <% issue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :issue_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtitle %>
+    <%= form.text_field :subtitle, id: :issue_subtitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_publisher %>
+    <%= form.number_field :id_publisher, id: :issue_id_publisher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_seller %>
+    <%= form.text_field :id_seller, id: :issue_id_seller %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_publish %>
+    <%= form.datetime_select :date_publish, id: :issue_date_publish %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_acquisition %>
+    <%= form.datetime_select :date_acquisition, id: :issue_date_acquisition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover_price %>
+    <%= form.text_field :cover_price, id: :issue_cover_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acquisition_price %>
+    <%= form.text_field :acquisition_price, id: :issue_acquisition_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

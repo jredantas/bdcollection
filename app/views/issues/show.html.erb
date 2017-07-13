@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @issue.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @issue.subtitle %>
+</p>
+
+<p>
+  <strong>Id publisher:</strong>
+  <%= @issue.id_publisher %>
+</p>
+
+<p>
+  <strong>Id seller:</strong>
+  <%= @issue.id_seller %>
+</p>
+
+<p>
+  <strong>Date publish:</strong>
+  <%= @issue.date_publish %>
+</p>
+
+<p>
+  <strong>Date acquisition:</strong>
+  <%= @issue.date_acquisition %>
+</p>
+
+<p>
+  <strong>Cover price:</strong>
+  <%= @issue.cover_price %>
+</p>
+
+<p>
+  <strong>Acquisition price:</strong>
+  <%= @issue.acquisition_price %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>
