@@ -2,6 +2,15 @@
 
 <h1>Issues</h1>
 
+<%= form_tag(issues_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Issues" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% if @issues.blank? %>
+  <h4>There are no issues containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -39,3 +48,5 @@
 <br>
 
 <%= link_to 'New Issue', new_issue_path %>
+<br>
+<%= link_to 'Back', root_path %>

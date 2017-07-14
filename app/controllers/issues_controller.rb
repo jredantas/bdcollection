@@ -3,9 +3,9 @@ class IssuesController < ApplicationController
 
   # GET /issues
   # GET /issues.json
-  def index
-    @issues = Issue.all
-  end
+  #def index
+  #  @issues = Issue.all
+  #end
 
   # GET /issues/1
   # GET /issues/1.json
@@ -58,6 +58,18 @@ class IssuesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to issues_url, notice: 'Issue was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # SEARCH /issues/1
+  # SEARCH /issues/1.json
+  def index
+    @issues = Issue.all
+    if params[:search]
+      @issues = Issue.search(params[:search]).order("created_at DESC")
+    else
+      @issues = Issue.all.order("created_at DESC")
+      @issues = Issue.all.limit("10")
     end
   end
 
