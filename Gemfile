@@ -54,4 +54,4 @@ gem 'devise'
 gem 'zurb-foundation'
 gem 'simple_form'
 gem "bootstrap-sass-rails"
-gem 'foreigner'
+
