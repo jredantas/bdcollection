@@ -2,14 +2,14 @@
 lock '3.4.0'
 
 set :application, 'bdcollection'
-set :repo_url, 'jredantas@github.com:jredantas/bdcollection.git'
+set :repo_url, 'git@github.com:jredantas/bdcollection.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
-set :deploy_to, '/home/ubuntu/bdcollection'
+set :deploy_to, '/home/deploy/bdcollection'
 
 # Default value for :scm is :git
 # set :scm, :git
