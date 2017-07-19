@@ -22,23 +22,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :id_publisher %>
-    <%= form.number_field :id_publisher, id: :issue_id_publisher %>
+    <%= form.label :publisher_id %>
+    <%= form.number_field :publisher_id, id: :issue_publisher_id %>
   </div>
 
   <div class="field">
-    <%= form.label :id_seller %>
-    <%= form.text_field :id_seller, id: :issue_id_seller %>
+    <%= form.label :seller_id %>
+    <%= form.number_field :seller_id, id: :issue_seller_id %>
   </div>
 
   <div class="field">
     <%= form.label :date_publish %>
-    <%= form.datetime_select :date_publish, id: :issue_date_publish %>
+    <%= form.date_field :date_publish, id: :issue_date_publish	 %>
   </div>
 
   <div class="field">
     <%= form.label :date_acquisition %>
-    <%= form.datetime_select :date_acquisition, id: :issue_date_acquisition %>
+    <%= form.date_field :date_acquisition, id: :issue_date_acquisition %>
   </div>
 
   <div class="field">
@@ -55,3 +55,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+

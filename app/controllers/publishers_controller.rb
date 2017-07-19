@@ -10,6 +10,12 @@ class PublishersController < ApplicationController
   # GET /publishers/1
   # GET /publishers/1.json
   def show
+    #@publisher = Publisher.includes(:countries)
+    #          .joins(:countries)
+    #          .where("Country.id = ?", @publisher.country_id)
+    #          .find(params[:id])
+    #@publisher = Publisher.joins("INNER JOIN countries ON publishers.country_id = countries.id")
+    #@publisher = Publisher.includes(:country) #.joins(:country)
   end
 
   # GET /publishers/new
@@ -69,6 +75,6 @@ class PublishersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publisher_params
-      params.require(:publisher).permit(:name, :id_country)
+      params.require(:publisher).permit(:name, :country_id)
     end
 end

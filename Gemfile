@@ -55,3 +55,7 @@ gem 'zurb-foundation'
 gem 'simple_form'
 gem "bootstrap-sass-rails"
 
+gem 'jquery-rails'
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
+

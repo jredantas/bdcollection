@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713140955) do
+ActiveRecord::Schema.define(version: 20170718002937) do
 
   create_table "countries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170713140955) do
   create_table "issues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.string "subtitle"
-    t.integer "id_publisher"
-    t.string "id_seller"
+    t.integer "publisher_id"
+    t.string "seller_id"
     t.datetime "date_publish"
     t.datetime "date_acquisition"
     t.float "cover_price", limit: 24
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20170713140955) do
 
   create_table "publishers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.integer "id_country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_publishers_on_country_id"
   end
 
   create_table "sellers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -61,4 +62,5 @@ ActiveRecord::Schema.define(version: 20170713140955) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "publishers", "countries"
 end

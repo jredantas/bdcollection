@@ -14,6 +14,11 @@
 //= require turbolinks
 //= require_tree .
 
+//= require twitter/bootstrap
+
+//= require moment
+//= require daterangepicker
+
 $(function(){ $(document).foundation(); });
 
-//= require twitter/bootstrap
+
