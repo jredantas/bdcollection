@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: fortal18
+  password: <%= ENV['BDCOLLECTION_DATABASE_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: bdcollection_production
-  username: bdcollection
+  username: root
   password: <%= ENV['BDCOLLECTION_DATABASE_PASSWORD'] %>
